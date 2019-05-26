@@ -29,8 +29,8 @@ public:
    */
   OATPP_CREATE_COMPONENT(std::shared_ptr<oatpp::async::Executor>, executor)([] {
     return std::make_shared<oatpp::async::Executor>(
-      4 /* Data-Processing threads */,
-      1 /* I/O threads */,
+      9 /* Data-Processing threads */,
+      2 /* I/O threads */,
       1 /* Timer threads */
     );
   }());
