@@ -12,23 +12,17 @@ Example project how-to use oatpp asynchronous API.
 ### Project layout
 
 ```
-
-- CMakeLists.txt               // project loader script. load and build dependencies 
-- main/                        // main project directory
-    |
-    |- CMakeLists.txt          // projects CMakeLists.txt
-    |- src/                    // source folder
-    |- test/                   // test folder
-    
-```
-```
+- CMakeLists.txt                        // projects CMakeLists.txt
 - src/
     |
-    |- controller/              // Folder containing controller where all endpoints are declared
-    |- dto/                     // DTOs are declared here
-    |- AppComponent.hpp         // Service config
-    |- Logger.hpp               // Application Logger
-    |- App.cpp                  // main() is here
+    |- controller/                      // Folder containing controller where all endpoints are declared
+    |- dto/                             // DTOs are declared here
+    |- AppComponent.hpp                 // Service config
+    |- Logger.hpp                       // Application Logger
+    |- App.cpp                          // main() is here
+
+- test/                                 // test folder
+- utility/install-oatpp-modules.sh      // utility script to install required oatpp-modules.
     
 ```
 
@@ -38,10 +32,16 @@ Example project how-to use oatpp asynchronous API.
 
 #### Using CMake
 
+**Requires**
+
+- `oatpp` module installed. You may run `utility/install-oatpp-modules.sh` 
+script to install required oatpp modules.
+
 ```
 $ mkdir build && cd build
 $ cmake ..
-$ make run        ## Download, build, and install all dependencies. Run project
+$ make 
+$ ./example-async-api-exe  # - run application.
 
 ```
 
