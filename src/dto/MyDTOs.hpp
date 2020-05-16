@@ -1,10 +1,3 @@
-//
-//  UserDto.hpp
-//  crud
-//
-//  Created by Leonid on 3/13/18.
-//  Copyright © 2018 oatpp. All rights reserved.
-//
 
 #ifndef MyDTOs_hpp
 #define MyDTOs_hpp
@@ -18,7 +11,7 @@
  *  Data Transfer Object. Object containing fields only.
  *  Used in API for serialization/deserialization and validation
  */
-class HelloDto : public oatpp::data::mapping::type::Object {
+class HelloDto : public oatpp::Object {
   
   DTO_INIT(HelloDto, Object)
   
@@ -28,7 +21,7 @@ class HelloDto : public oatpp::data::mapping::type::Object {
   
 };
 
-class MessageDto : public oatpp::data::mapping::type::Object {
+class MessageDto : public oatpp::Object {
   
   DTO_INIT(MessageDto, Object)
   

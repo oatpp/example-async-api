@@ -1,10 +1,3 @@
-//
-//  MyController.hpp
-//  web-starter-project
-//
-//  Created by Leonid on 2/12/18.
-//  Copyright © 2018 oatpp. All rights reserved.
-//
 
 #ifndef MyController_hpp
 #define MyController_hpp
@@ -14,6 +7,8 @@
 #include "oatpp/web/server/api/ApiController.hpp"
 #include "oatpp/core/macro/codegen.hpp"
 #include "oatpp/core/macro/component.hpp"
+
+#include OATPP_CODEGEN_BEGIN(ApiController) //<-- Begin codegen
 
 /**
  *  EXAMPLE ApiController
@@ -35,11 +30,6 @@ public:
                                                                     objectMapper)){
     return std::shared_ptr<MyController>(new MyController(objectMapper));
   }
-  
-  /**
-   *  Begin ENDPOINTs generation ('ApiController' codegen)
-   */
-#include OATPP_CODEGEN_BEGIN(ApiController)
   
   /**
    *  Hello World endpoint Coroutine mapped to the "/" (root)
@@ -101,11 +91,8 @@ public:
     
   };
   
-  /**
-   *  Finish ENDPOINTs generation ('ApiController' codegen)
-   */
-#include OATPP_CODEGEN_END(ApiController)
-  
 };
+
+#include OATPP_CODEGEN_BEGIN(ApiController) //<-- End codegen
 
 #endif /* MyController_hpp */
