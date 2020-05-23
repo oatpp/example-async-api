@@ -11,9 +11,9 @@
  *  Data Transfer Object. Object containing fields only.
  *  Used in API for serialization/deserialization and validation
  */
-class HelloDto : public oatpp::Object {
+class HelloDto : public oatpp::DTO {
   
-  DTO_INIT(HelloDto, Object)
+  DTO_INIT(HelloDto, DTO)
   
   DTO_FIELD(String, userAgent, "user-agent");
   DTO_FIELD(String, message);
@@ -21,9 +21,9 @@ class HelloDto : public oatpp::Object {
   
 };
 
-class MessageDto : public oatpp::Object {
+class MessageDto : public oatpp::DTO {
   
-  DTO_INIT(MessageDto, Object)
+  DTO_INIT(MessageDto, DTO)
   
   DTO_FIELD(String, message);
   

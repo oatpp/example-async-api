@@ -82,10 +82,10 @@ public:
     ENDPOINT_ASYNC_INIT(EchoDtoBody)
     
     Action act() override {
-      return request->readBodyToDtoAsync<MessageDto>(controller->getDefaultObjectMapper()).callbackTo(&EchoDtoBody::returnResponse);
+      return request->readBodyToDtoAsync<oatpp::Object<MessageDto>>(controller->getDefaultObjectMapper()).callbackTo(&EchoDtoBody::returnResponse);
     }
     
-    Action returnResponse(const MessageDto::ObjectWrapper& body){
+    Action returnResponse(const oatpp::Object<MessageDto>& body){
       return _return(controller->createDtoResponse(Status::CODE_200, body));
     }
     
